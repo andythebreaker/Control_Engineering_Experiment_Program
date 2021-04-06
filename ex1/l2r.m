@@ -1,0 +1,15 @@
+s=tf('s');
+sys1=1/(s+1);
+sys2=(s-20)/((s-2)^2*(s-5));
+sysp=parallel(sys1,sys2);
+syss=series(sys1,sys2);
+sysf=feedback(sys1,1-1);
+[sysp_get_tfdata_num,sysp_get_tfdata_den]=tfdata(sysp,'v');
+[syss_get_tfdata_num,syss_get_tfdata_den]=tfdata(syss,'v');
+[sysf_get_tfdata_num,sysf_get_tfdata_den]=tfdata(sysf,'v');
+[sysp_z,sysp_p,sysp_k]=zpkdata(sysp,'v');
+[syss_z,syss_p,syss_k]=zpkdata(syss,'v');
+[sysf_z,sysf_p,sysf_k]=zpkdata(sysf,'v');
+get(sysp)
+get(syss)
+get(sysf)

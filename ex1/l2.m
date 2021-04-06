@@ -14,6 +14,13 @@ sysf = feedback(sys1,1,-1);
 [a,b] = tfdata(sysf);
 [num_all,dem_all] = tfdata(sysf,'v');
 [z,p,k] = zpkdata(sysf,'v');
+disp("==================")
+get(sys1)
+disp("==================")
+get(sys2)
+disp("==================")
 get(sysp)
-get(syss);
-get(sysf);
+disp("==================")
+get(syss)
+disp("==================")
+get(sysf)
